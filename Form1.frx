@@ -1,0 +1,38 @@
+IMOV AL, 9
+ADD AL, 48
+MOV AH, 14
+INT 10h
+
+MOV AH, 0
+INT 16h
+
+RET
+ÿJMP Start
+
+Msg1 DB 'Hello World!$'
+Msg2 DB '  Islam Adel!$'
+
+Start:
+
+MOV DX, OFFSET Msg1
+MOV AH, 9
+INT 21h
+
+MOV AH, 0
+INT 16h
+
+MOV AL, 13
+MOV AH, 0Eh
+INT 10h
+MOV AL, 10
+MOV AH, 0Eh
+INT 10h
+
+MOV DX, OFFSET Msg2
+MOV AH, 9
+INT 21h
+
+MOV AH, 0
+INT 16h
+
+RET
